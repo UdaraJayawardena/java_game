@@ -1,0 +1,10 @@
+version: '2.1'
+
+services:
+  backend:
+    build: .
+    ports:
+      - 3000:3000
+    volumes:
+      - ./src:/usr/src/app/src
+    command: npm run development

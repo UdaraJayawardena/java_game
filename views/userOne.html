@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+    <h1>Chat App</h1>
+    <div id="future"></div>
+
+    <form id="form" id="chat_form">
+        <input id="chat_input" type="text">
+        <input type="submit" value="Send">
+    </form>
+
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+</body>
+
+<script>
+    var socket = io.connect('http://localhost:3000/');
+    // console.log(socket);
+    let chatRoomName = "ABC";
+
+    socket.on('connect', function () {
+        const socketId = socket.id;
+        const chatRoomNo = 'UJ43';
+        console.log('socketId', socketId);
+
+        let obj = {
+            "username": "Udara",
+            "socketId": socketId,
+            "chatRoomName": chatRoomName
+        }
+        let data = {
+            "roomId": chatRoomNo,
+            "message": {
+                "senderId": "userOne",
+                "message": "Hello"
+            }
+        }
+        // socket.emit('new-user', obj);
+
+        // socket.on('welcome-message', function (data) {
+        //     console.log('welcome-message');
+        //     console.log(data);
+        // });
+
+
+        socket.emit('send-message', (data));
+
+        socket.on('messages', function (data) {
+            console.log('messages');
+            console.log(data);
+        });
+
+        // socket.on('room1', function(data) {
+        //     console.log('room1');
+        //     console.log(data);
+        // });
+    });
+
+    // socket.emit('new-user', socket);
+</script>
+
+</html>

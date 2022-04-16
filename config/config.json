@@ -1,0 +1,45 @@
+{
+  "local": {
+    "db": "java_game",
+    "host": "localhost",
+    "password": "",
+    "port": 27017,
+    "url": "mongodb://[host]:[port]/[db]",
+    "username": ""
+  },
+
+  "development": {
+    "db": "java_game",
+    "host": "localhost",
+    "password": "1021oZ8ugPkX19ql",
+    "port": 27017,
+    "url": "mongodb://[host]:[port]/[db]",
+    "username": "user_43"
+  },
+  "release": {
+    "db": "java_game",
+    "host": "localhost",
+    "password": "1021oZ8ugPkX19ql",
+    "port": 27017,
+    "url": "mongodb://[host]:[port]/[db]",
+    "username": "user_43"
+  },
+  "staging": {
+    "db": "java_game",
+    "host": "localhost",
+    "password": "1021oZ8ugPkX19ql",
+    "port": 27017,
+    "url": "mongodb://[host]:[port]/[db]",
+    "username": "user_43"
+  },
+
+
+  "production": {
+    "db": "java_game",
+    "host": "localhost",
+    "password": "",
+    "port": 27017,
+    "url": "mongodb://[host]:[port]/[db]",
+    "username": ""
+  }
+}

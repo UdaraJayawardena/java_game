@@ -1,0 +1,142 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "version": "1.0.0",
+    "title": "2048 Java Game",
+    "description": "Swagger Documentation",
+    "termsOfService": "",
+    "contact": {
+      "name": "Udara Jayawardena",
+      "email": "udara@earltech.biz",
+      "url": "https://example.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/",
+      "description": "Local server"
+    }
+  ],
+  "tags": [
+    {
+      "name": "User",
+      "description": "User Management Endpoints"
+    }
+  ],
+  "paths": {
+    "/user/apiCheck": {
+      "get": {
+        "tags": ["User"],
+        "description": "API Check - Backend",
+        "operationId": "/user/apiCheck",
+        "summary": "Authorized User Only",
+        "security": [
+          {
+            "api_auth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "API Check - Backend",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "updateSocket": {
+        "required": ["userId", "socketId"],
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "example": 1
+          },
+          "username": {
+            "type": "string",
+            "example": "Udara"
+          },
+          "socketId": {
+            "type": "string",
+            "example": "socketId"
+          }
+        }
+      },
+      "createChatRoom": {
+        "required": [
+          "roomId",
+          "roomName",
+          "users",
+          "mobileAppUserId",
+          "userId"
+        ],
+        "type": "object",
+        "properties": {
+          "roomId": {
+            "type": "string",
+            "example": "uniqueRoomId"
+          },
+          "roomName": {
+            "type": "string",
+            "example": "username & username"
+          },
+          "users": {
+            "type": "array",
+            "example": [
+              {
+                "_id": 14,
+                "username": "udara"
+              }
+            ]
+          },
+          "mobileAppUserId": {
+            "type": "integer",
+            "example": 10
+          },
+          "userId": {
+            "type": "integer",
+            "example": 20
+          },
+          "createdBy": {
+            "type": "string",
+            "example": "dashboard or mobileApp"
+          }
+        }
+      },
+      "chatSessionCheck": {
+        "required": ["mobileAppUserId", "userId"],
+        "type": "object",
+        "properties": {
+          "mobileAppUserId": {
+            "type": "integer",
+            "example": 10
+          },
+          "userId": {
+            "type": "integer",
+            "example": 20
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "api_auth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": {
+    "api_auth": []
+  }
+}

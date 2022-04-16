@@ -1,0 +1,7 @@
+{
+  "name": "node-api-server",
+  "description": "",
+  "repository": "https://bitbucket.org/chat-server-api/chat_server_api_node-js",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "keywords": ["node", "express", "static"]
+}
