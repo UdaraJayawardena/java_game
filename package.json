@@ -3,7 +3,7 @@
     "version": "0.0.0",
     "private": true,
     "scripts": {
-        "start": "NODE_ENV=development node app.js",
+        "start": "NODE_ENV=development nodemon app.js",
         "development": "NODE_ENV=development nodemon app.js"
     },
     "dependencies": {
@@ -31,5 +31,8 @@
         "eslint-config-airbnb-base": "^14.2.1",
         "eslint-plugin-import": "^2.24.2",
         "nodemon": "^2.0.9"
-    }
+    },
+    "engines": {
+        "node": "10.x"
+      }
 }
