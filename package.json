@@ -3,7 +3,7 @@
     "version": "0.0.0",
     "private": true,
     "scripts": {
-        "start": "NODE_ENV=development nodemon app.js",
+        "start": "NODE_ENV=development node app.js",
         "development": "NODE_ENV=development nodemon app.js"
     },
     "dependencies": {
@@ -34,5 +34,5 @@
     },
     "engines": {
         "node": "10.x"
-      }
+    }
 }
