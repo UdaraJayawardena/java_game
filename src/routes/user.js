@@ -137,6 +137,22 @@ router.post('/createUser', async (req, res) => {
   }
 });
 
+router.get('/getUserById', async (req, res) => {
+  console.log('============= getUserById =============');
+
+  try {
+    axios.get('https://firestore.googleapis.com/v1/projects/java-game-ccb75/databases/(default)/documents/users/98a16f3f-1064-48df-88a6-7fc402dbf950')
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  } catch (error) {
+    return res.status(500).json({ message: 'Unexpected_Error_Occured' });
+  }
+});
+
 (async () => {
 
 })();
